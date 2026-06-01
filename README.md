@@ -52,16 +52,16 @@ Set a `baseURI` that does **not** end in `/`. Every token, regardless of id, ret
 
 ```solidity
 // owner-only, before reveal — note: no trailing slash
-setBaseURI("ipfs://PLACEHOLDER_CID/prerevea");
+setBaseURI("ipfs://PREREVEAL_CID");
 ```
 
 Result — every token points at the single placeholder file:
 
 | Token ID | tokenURI                              |
 | -------- | ------------------------------------- |
-| 1        | `ipfs://PLACEHOLDER_CID/prereveal` |
-| 2        | `ipfs://PLACEHOLDER_CID/prereveal` |
-| 34       | `ipfs://PLACEHOLDER_CID/prereveal` |
+| 1        | `ipfs://PREREVEAL_CID` |
+| 2        | `ipfs://PREREVEAL_CID` |
+| 34       | `ipfs://PREREVEAL_CID` |
 
 (If you leave `baseURI` empty — the initial state — `tokenURI` returns `""` for every token instead. That works too, but a placeholder file generally renders better in marketplaces and wallets than an empty URI.)
 
