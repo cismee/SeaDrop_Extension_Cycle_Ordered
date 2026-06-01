@@ -50,18 +50,13 @@ The three `baseURI` states above give you a built-in two-phase reveal, controlle
 
 Set a `baseURI` that does **not** end in `/`. Every token, regardless of id, returns that exact string, so all minted NFTs show the same "unrevealed" metadata while minting is in progress.
 
-```solidity
-// owner-only, before reveal — note: no trailing slash
-setBaseURI("ipfs://PLACEHOLDER_CID/prereveal.json");
-```
-
 Result — every token points at the single placeholder file:
 
 | Token ID | tokenURI                              |
 | -------- | ------------------------------------- |
-| 1        | `ipfs://PLACEHOLDER_CID/prereveal.json` |
-| 2        | `ipfs://PLACEHOLDER_CID/prereveal.json` |
-| 34       | `ipfs://PLACEHOLDER_CID/prereveal.json` |
+| 1        | `ipfs://PLACEHOLDER_CID/prereveal` |
+| 2        | `ipfs://PLACEHOLDER_CID/prereveal` |
+| 34       | `ipfs://PLACEHOLDER_CID/prereveal` |
 
 (If you leave `baseURI` empty — the initial state — `tokenURI` returns `""` for every token instead. That works too, but a placeholder file generally renders better in marketplaces and wallets than an empty URI.)
 
