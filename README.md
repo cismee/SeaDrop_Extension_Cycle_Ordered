@@ -50,6 +50,11 @@ The three `baseURI` states above give you a built-in two-phase reveal, controlle
 
 Set a `baseURI` that does **not** end in `/`. Every token, regardless of id, returns that exact string, so all minted NFTs show the same "unrevealed" metadata while minting is in progress.
 
+```solidity
+// owner-only, before reveal — note: no trailing slash
+setBaseURI("ipfs://PLACEHOLDER_CID/prerevea");
+```
+
 Result — every token points at the single placeholder file:
 
 | Token ID | tokenURI                              |
